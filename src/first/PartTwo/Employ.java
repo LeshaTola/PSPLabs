@@ -1,4 +1,4 @@
-package first.PartTwo;
+package First.PartTwo;
 
 public class Employ {
     private String lastName;

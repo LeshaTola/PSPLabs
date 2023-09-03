@@ -1,4 +1,4 @@
-package first.PartOne;
+package First.PartOne;
 
 public class Main {
     public static void main(String[] args) throws Exception {

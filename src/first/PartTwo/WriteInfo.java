@@ -1,4 +1,4 @@
-package first.PartTwo;
+package First.PartTwo;
 
 public class WriteInfo {
     public static void print(Employ employ) {
