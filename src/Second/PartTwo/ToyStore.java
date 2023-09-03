@@ -17,20 +17,25 @@ public class ToyStore {
 
     public void showStock() {
         for (Toy toy : stock) {
-            System.out.println(toy.toString() + "\n");
+            System.out.println(toy.toString());
         }
+        System.out.println();
+
     }
 
     public void playWithStock() {
         for (Toy toy : stock) {
+            System.out.println(toy.getToyName());
             toy.play();
         }
     }
 
     public void showSpeakableToys() {
         for (Toy toy : stock) {
-            if (toy instanceof ISeakable)
+            if (toy instanceof ISeakable) {
+                System.out.println(toy.getToyName());
                 ((ISeakable) toy).speak();
+            }
         }
     }
 
