@@ -1,26 +1,26 @@
 package First.PartTwo;
 
-public class Employ {
+public class Employee {
     private String lastName;
     private String firstName;
     private float salary;
     private boolean hasChildren;
 
-    public Employ(String lastName, String firstName, float salary, boolean hasChildren) {
+    public Employee(String lastName, String firstName, float salary, boolean hasChildren) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.salary = salary;
         this.hasChildren = hasChildren;
     }
 
-    public Employ() {
+    public Employee() {
         lastName = "unknown";
         firstName = "unknown";
         salary = 0;
         hasChildren = false;
     }
 
-    public Employ(String lastName, String firstName) {
+    public Employee(String lastName, String firstName) {
         this.lastName = lastName;
         this.firstName = firstName;
     }
@@ -36,6 +36,30 @@ public class Employ {
 
     public void printHasChildren() {
         System.out.println("Children: " + hasChildren);
+    }
+
+    public void print() {
+        printFullName();
+        printSalary();
+        printHasChildren();
+    }
+
+    public static float averageSalary(Employee[] employs) {
+        float sum = 0;
+        for (Employee employ : employs) {
+            sum += employ.getSalary();
+        }
+        return sum / employs.length;
+    }
+
+    public static int employsWithChildren(Employee[] employs) {
+        int count = 0;
+        for (Employee employ : employs) {
+            if (employ.hasChildren) {
+                count++;
+            }
+        }
+        return count;
     }
 
     // #region setters and getters
