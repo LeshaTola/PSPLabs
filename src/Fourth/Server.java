@@ -4,7 +4,8 @@ import java.io.*;
 import java.net.*;
 
 public class Server {
-    private void startup() {
+
+    public void startup() {
         ServerSocket serverSocket = null;
         Socket clientSocket = null;
         ObjectInputStream inputStream = null;
@@ -21,7 +22,9 @@ public class Server {
             String message = (String) inputStream.readObject();
             while (message.equals("q")) {
                 System.out.println("Received message: " + message);
-                getTax(Float.parseFloat(message));
+                var tax = getTax(Float.parseFloat(message));
+                outputStream.writeObject(String.valueOf(tax));
+                message = (String) inputStream.readObject();
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
