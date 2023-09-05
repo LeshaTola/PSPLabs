@@ -5,22 +5,26 @@ import java.net.*;
 
 public class Server {
 
-    public void startup() {
+    public static void main(String[] args) {
+        startup();
+    }
+
+    public static void startup() {
         ServerSocket serverSocket = null;
         Socket clientSocket = null;
         ObjectInputStream inputStream = null;
         ObjectOutputStream outputStream = null;
 
         try {
-
             serverSocket = new ServerSocket(8888);
+            System.out.println("Waiting for clients...");
             clientSocket = serverSocket.accept();
-            System.out.println("connection established....");
+            System.out.println("Client connected!");
             inputStream = new ObjectInputStream(clientSocket.getInputStream());
             outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
 
             String message = (String) inputStream.readObject();
-            while (message.equals("q")) {
+            while (!message.equals("q")) {
                 System.out.println("Received message: " + message);
                 var tax = getTax(Float.parseFloat(message));
                 outputStream.writeObject(String.valueOf(tax));
@@ -38,18 +42,16 @@ public class Server {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-
         }
     }
 
-    private float getTax(float salary) {
+    private static float getTax(float salary) {
         if (salary < 100000) {
-            return salary * 0.5f;
+            return salary * 0.05f;
         } else if (salary < 100000 && salary > 500000) {
             return salary * 0.1f;
         } else {
             return salary * 0.15f;
         }
     }
-
 }
