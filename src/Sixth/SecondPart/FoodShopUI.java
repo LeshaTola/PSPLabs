@@ -1,29 +1,21 @@
 package Sixth.SecondPart;
 
 import java.awt.Button;
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dialog;
-import java.awt.Dimension;
 import java.awt.Label;
 import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Scanner;
 
 import javax.swing.BoxLayout;
-import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
-import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import com.google.gson.Gson;
@@ -62,7 +54,7 @@ public class FoodShopUI {
         frame.setSize(800, 600);
 
         JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+
         mainPanel.setSize(800, 600);
         frame.add(mainPanel);
 
@@ -101,7 +93,6 @@ public class FoodShopUI {
 
                 Dialog dialog = new Dialog(frame, "Saved");
                 dialog.setSize(200, 100);
-                // dialog.setDefaultCloseOperation(3);
                 dialog.setLayout(new BoxLayout(dialog, BoxLayout.Y_AXIS));
 
                 Label savedlable = new Label("Saved");
@@ -144,7 +135,6 @@ public class FoodShopUI {
 
                 Dialog dialog = new Dialog(frame, "Loaded");
                 dialog.setSize(200, 100);
-                // dialog.setDefaultCloseOperation(3);
                 dialog.setLayout(new BoxLayout(dialog, BoxLayout.Y_AXIS));
 
                 Label savedlable = new Label("Loaded");
@@ -229,10 +219,5 @@ public class FoodShopUI {
         newFoodPanel.add(proteinField);
         newFoodPanel.add(carbohydratesField);
         newFoodPanel.add(deliveryDate);
-
-        for (Component component : newFoodPanel.getComponents()) {
-            component.setSize(new Dimension(1000, 30));
-        }
     }
-
 }

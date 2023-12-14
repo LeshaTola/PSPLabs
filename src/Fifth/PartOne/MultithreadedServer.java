@@ -9,7 +9,7 @@ public class MultithreadedServer {
     static ExecutorService executeIt = Executors.newFixedThreadPool(2);
 
     public static void main(String[] args) {
-        int port = 8888;
+        int port = 8080;
         try (ServerSocket serverSocket = new ServerSocket(port);) {
 
             System.out.println("Waiting for clients...");

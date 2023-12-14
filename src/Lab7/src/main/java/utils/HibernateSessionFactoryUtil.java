@@ -1,10 +1,10 @@
 package utils;
-
-import models.Auto;
-import models.User;
+import models.Manufacturer;
+import models.Souvenir;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import services.ManufacturerService;
 
 public class HibernateSessionFactoryUtil {
     private static SessionFactory sessionFactory;
@@ -15,8 +15,8 @@ public class HibernateSessionFactoryUtil {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration().configure();
-                configuration.addAnnotatedClass(User.class);
-                configuration.addAnnotatedClass(Auto.class);
+                configuration.addAnnotatedClass(Manufacturer.class);
+                configuration.addAnnotatedClass(Souvenir.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
 

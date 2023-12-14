@@ -10,7 +10,7 @@ public class Client {
     }
 
     public static void connect() {
-        int port = 8888;
+        int port = 8080;
         String ip = "127.0.0.1";
         Socket clientSocket = null;
 

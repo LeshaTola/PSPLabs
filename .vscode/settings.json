@@ -4,6 +4,7 @@
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "c:\\Users\\Defestronik\\Desktop\\gson-2.8.2.jar"
+        "c:\\Users\\Defestronik\\Desktop\\gson-2.8.2.jar",
+        "lib/gson-2.8.2.jar"
     ]
 }

@@ -29,7 +29,7 @@ public class Calculator extends JFrame {
 
     Calculator() {
         super("Super_Duper Calculator");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 200);
 
         setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -89,7 +89,6 @@ public class Calculator extends JFrame {
         public void actionPerformed(ActionEvent e) {
             this.dispose();
         }
-
     }
 
     class calculateButtonAction implements ActionListener {

@@ -1,7 +1,6 @@
 package Sixth.SecondPart;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 public class Food implements Serializable {
 
